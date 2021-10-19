@@ -1,7 +1,7 @@
-import express from "express";
-import { createPageRenderer } from "vite-plugin-ssr";
+import express from 'express';
+import { createPageRenderer } from 'vite-plugin-ssr';
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === 'production';
 const root = `${__dirname}/..`;
 
 startServer();
@@ -13,7 +13,8 @@ async function startServer() {
   if (isProduction) {
     app.use(express.static(`${root}/dist/client`));
   } else {
-    const vite = require("vite");
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const vite = require('vite');
     viteDevServer = await vite.createServer({
       root,
       server: { middlewareMode: true },
@@ -22,7 +23,7 @@ async function startServer() {
   }
 
   const renderPage = createPageRenderer({ viteDevServer, isProduction, root });
-  app.get("*", async (req, res, next) => {
+  app.get('*', async (req, res, next) => {
     const url = req.originalUrl;
     const pageContextInit = {
       url,
