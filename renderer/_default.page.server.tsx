@@ -30,6 +30,13 @@ async function render(pageContext: PageContextBuiltIn & PageContext) {
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="${logoUrl}" />
+        <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/assets.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/reduce-motion.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/system-ui.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/ui-monospace.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/typography.css" rel="stylesheet" />
+        <link href="https://unpkg.com/sanitize.css/forms.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
